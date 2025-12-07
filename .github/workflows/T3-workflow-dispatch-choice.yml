@@ -20,4 +20,4 @@ jobs:
       - name: Comentario
         run: echo "Comentário WORKFLOW DISPATCH choice"
       - name: Execucao
-        run: echo "Selecionado:${{ inputs.tags }}"
+        run: echo "Selecionado - ${{ inputs.tags }}!"
