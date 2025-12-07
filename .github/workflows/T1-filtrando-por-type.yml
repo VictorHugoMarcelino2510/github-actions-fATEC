@@ -1,0 +1,22 @@
+name: GitHub Actions - Workflow Tipo Template
+run-name: Running - ${{ github.event_name }}
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - closed
+    branches:
+      - 'main'
+    paths:
+      - 'README.md'
+      - '.github/workflows/*'
+
+jobs:
+  t1-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comentario
+        run: echo "Comentário PULL-REQUEST Workflow - Type"
+      - name: Executado
+        run: echo "Executado"
