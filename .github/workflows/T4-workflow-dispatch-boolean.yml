@@ -1,16 +1,19 @@
 name: GitHub Actions - Workflow Dispatch Boolean Template
-run-name: Running - ${{ github.event_name }}
+run-name: Running = ${{ github.event_name }}
+
 on:
   workflow_dispatch:
     inputs:
       resposta:
         description: 'Esta é a chave que você coloca e o nome que quiser.'
-        type: boolean        
+        type: boolean
+
 jobs:
-  run-workflow-dispatch:
+  on-workflow-dispatch:
     runs-on: ubuntu-latest
     steps:
       - name: Comentario
-        run: echo "Comentário WORKFLOW DISPATCH boolean"
-      - name: Execucao
-        run: echo "Maior acerto que você teve: ${{ inputs.resposta }}"
+        run: |
+          echo "Comentário WORKFLOW DISPATCH - Booleano"
+          echo "Maior acerto que você teve: ${{ toJSON(github.event.inputs.resposta) }}!"
+
